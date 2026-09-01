@@ -12,7 +12,7 @@ def construir_data_ping(char: str) -> bytes:
     padding    = bytes(range(0x11, 0x11 + (48 - 9)))  
     return timestamp + char_byte + padding             
 
-def enviar_stealth(mensaje: str, destino: str = "192.168.0.27"):
+def enviar_stealth(mensaje: str, destino: str = "127.0.0.1"):
     icmp_id = os.getpid() & 0xFFFF
     print(f"[*] Destino  : {destino}")
     print(f"[*] Mensaje  : {mensaje!r}  ({len(mensaje)} caracteres → {len(mensaje)} paquetes)")
